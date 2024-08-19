@@ -1,6 +1,4 @@
-// import { getrPosts } from "./postsApi";
-
-import { getrPosts } from "./postsAPI";
+import { getPosts } from "./postsAPI";
 
 const { createSlice, createAsyncThunk } = require("@reduxjs/toolkit");
 
@@ -11,7 +9,7 @@ const initialState = {
   error: null,
 };
 export const fetchPosts = createAsyncThunk("posts/fetchPosts", async () => {
-  const posts = await getrPosts();
+  const posts = await getPosts();
   return posts;
 });
 
